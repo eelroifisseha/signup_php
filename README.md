@@ -26,7 +26,7 @@ mysql --version
 ## 2) Install PHP packages
 
 ```bash
-cd /home/becki/Documents/signup_php
+cd ../signup_php
 composer install
 ```
 
@@ -44,20 +44,20 @@ Edit `.env` DB values:
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_NAME=signup_php
-DB_USER=signup_user
-DB_PASS=Signup@12345
+DB_USER=root
+DB_PASS=
 ```
 
 ## 4) Create database tables
 
 ```bash
-mysql -u signup_user -p signup_php < /home/becki/Documents/signup_php/sql/schema.sql
+mysql -u signup_user -p signup_php < ../signup_php/sql/schema.sql
 ```
 
 ## 5) Start app
 
 ```bash
-cd /home/becki/Documents/signup_php/public
+cd ../signup_php/public
 php -S localhost:8000
 ```
 
