@@ -1,0 +1,239 @@
+<!doctype html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Chronos - Build better habits, one day at a time</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#410006",
+            "on-background": "#191c1d",
+            "on-surface": "#191c1d",
+            "on-primary-fixed-variant": "#005313",
+            "surface": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "secondary-container": "#ff6b6b",
+            "surface-bright": "#f8f9fa",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#e1e3e4",
+            "inverse-surface": "#2e3132",
+            "tertiary-fixed": "#ffd9e2",
+            "on-primary-fixed": "#002204",
+            "primary-fixed": "#94f990",
+            "on-tertiary-container": "#690034",
+            "tertiary": "#a63360",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#003c0b",
+            "on-tertiary-fixed-variant": "#861948",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#ffdad8",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#f0f1f2",
+            "secondary": "#ae2f34",
+            "primary": "#006e1c",
+            "tertiary-container": "#f26f9d",
+            "primary-container": "#4caf50",
+            "on-secondary-container": "#6d0010",
+            "error": "#ba1a1a",
+            "outline": "#6f7a6b",
+            "primary-fixed-dim": "#78dc77",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb1c7",
+            "on-tertiary-fixed": "#3e001c",
+            "on-surface-variant": "#3f4a3c",
+            "on-secondary-fixed-variant": "#8c1520",
+            "surface-tint": "#006e1c",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb3b0",
+            "inverse-primary": "#78dc77",
+            "surface-container": "#edeeef",
+            "background": "#f8f9fa",
+            "on-error": "#ffffff",
+            "outline-variant": "#becab9",
+            "surface-container-high": "#e7e8e9",
+            "surface-container-low": "#f3f4f5",
+            "surface-container-highest": "#e1e3e4"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            headline: ["Manrope", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      color: #191c1d;
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-headline {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .filled-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body data-page="landing" class="antialiased flex flex-col min-h-screen">
+  <header class="bg-[#f8f9fa]/80 dark:bg-[#191c1d]/80 backdrop-blur-xl w-full top-0 z-50 sticky transition-all duration-200 ease-in-out">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-extrabold tracking-tight text-[#191c1d] dark:text-[#f8f9fa] font-headline">Chronos</span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 font-body">
+        <a class="text-[#191c1d]/70 dark:text-[#f8f9fa]/70 hover:text-green-600 dark:hover:text-green-300 transition-colors font-medium text-sm" href="#features">Features</a>
+      </nav>
+
+      <div class="flex items-center gap-4 font-body">
+        <a class="hidden md:block text-[#191c1d]/70 dark:text-[#f8f9fa]/70 hover:text-green-600 dark:hover:text-green-300 transition-colors font-medium text-sm" href="login.html">Log In</a>
+        <a class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-medium text-sm transition-transform hover:scale-95 duration-200 ease-in-out shadow-sm shadow-on-surface/5" href="signup.html">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow flex flex-col">
+    <section class="relative w-full py-24 md:py-32 lg:py-40 px-6 overflow-hidden flex flex-col items-center justify-center text-center bg-surface">
+      <div class="absolute inset-0 z-0 pointer-events-none opacity-40">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary-fixed blur-3xl opacity-20"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-secondary-container blur-3xl opacity-10"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-8">
+        <span class="px-4 py-1.5 rounded-full bg-surface-container-low text-primary text-xs font-semibold tracking-wide uppercase shadow-sm shadow-on-surface/5">The Living Chronology</span>
+        <h1 class="text-5xl md:text-6xl lg:text-[4rem] font-extrabold font-headline text-on-surface leading-[1.1] tracking-tight">
+          Build better habits,<br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">one day at a time.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface/70 max-w-2xl font-body leading-relaxed">
+          A beautifully minimal space to track your daily rhythms, build lasting streaks, and stay consistent without the noise.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+          <a class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-medium text-lg transition-transform hover:scale-95 duration-200 ease-in-out shadow-lg shadow-primary/20 text-center w-full sm:w-auto" href="signup.html">Start Your Journal Free</a>
+          <a class="bg-white text-on-surface px-8 py-4 rounded-xl font-medium text-lg border border-outline-variant hover:bg-surface-container-low transition-colors text-center w-full sm:w-auto" href="login.html">Log In</a>
+        </div>
+      </div>
+
+      <div class="relative z-10 w-full max-w-6xl mx-auto mt-20 p-4 md:p-8 rounded-[2rem] bg-surface-container-low shadow-[0px_24px_64px_rgba(25,28,29,0.08)]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 bg-surface-container-lowest rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden shadow-sm shadow-on-surface/5">
+            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-bold font-headline text-on-surface">Today's Rhythm</h3>
+              <span class="text-sm font-medium text-on-surface/60 font-label">Today</span>
+            </div>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between p-4 rounded-xl hover:bg-surface-bright transition-colors group">
+                <div class="flex items-center gap-4">
+                  <div class="w-6 h-6 rounded-full border-2 border-primary-container bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-sm shadow-primary/20">
+                    <span class="material-symbols-outlined text-white text-[14px] font-bold">check</span>
+                  </div>
+                  <span class="font-medium text-on-surface line-through opacity-70">Morning Meditation</span>
+                </div>
+                <span class="text-xs font-medium text-primary bg-primary-fixed/20 px-2.5 py-1 rounded-md">15 min</span>
+              </div>
+              <div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-bright transition-colors group relative shadow-[0_2px_8px_rgba(25,28,29,0.04)]">
+                <div class="flex items-center gap-4">
+                  <div class="w-6 h-6 rounded-full border-2 border-outline flex items-center justify-center"></div>
+                  <span class="font-medium text-on-surface">Read 20 Pages</span>
+                </div>
+                <span class="text-xs font-medium text-on-surface/50 bg-surface-container-high px-2.5 py-1 rounded-md">Evening</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface-container-lowest rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden shadow-sm shadow-on-surface/5">
+            <div class="absolute top-0 right-0 p-6 opacity-10">
+              <span class="material-symbols-outlined text-8xl filled-icon text-primary">local_fire_department</span>
+            </div>
+            <div>
+              <span class="text-sm font-semibold text-primary uppercase tracking-wider font-label">Current Streak</span>
+              <div class="mt-2 flex items-baseline gap-2">
+                <span class="text-[3.5rem] font-extrabold font-headline leading-none text-on-surface">12</span>
+                <span class="text-lg font-medium text-on-surface/60">Days</span>
+              </div>
+            </div>
+            <div class="mt-8">
+              <p class="text-sm text-on-surface/70 font-body">You're in the top 15% of consistent trackers this week. Keep the momentum going.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-surface-container-low px-6" id="features">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold font-headline text-on-surface mb-4">Focus on the rhythm,<br/>not the noise.</h2>
+          <p class="text-on-surface/70 font-body">Everything you need to build lasting habits, designed with soft minimalism to keep your mind clear.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm shadow-on-surface/5 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-12 h-12 rounded-xl bg-primary-fixed/30 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined filled-icon">edit_calendar</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Track daily habits</h3>
+              <p class="text-on-surface/70 font-body text-sm leading-relaxed">Log your daily actions with a clean and focused interface.</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm shadow-on-surface/5 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-12 h-12 rounded-xl bg-tertiary-fixed/40 flex items-center justify-center text-tertiary">
+              <span class="material-symbols-outlined filled-icon">local_fire_department</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Build streaks</h3>
+              <p class="text-on-surface/70 font-body text-sm leading-relaxed">Visual cues reward consistency and keep your chain unbroken.</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm shadow-on-surface/5 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-12 h-12 rounded-xl bg-primary-fixed-dim/30 flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined filled-icon">insert_chart</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold font-headline text-on-surface mb-2">Stay consistent</h3>
+              <p class="text-on-surface/70 font-body text-sm leading-relaxed">Keep momentum with a simple UI that makes daily check-ins effortless.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#f8f9fa] py-12 border-t border-[#becab9]/15">
+    <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-6 md:gap-0">
+      <div class="text-lg font-bold font-headline text-on-surface">Chronos</div>
+      <div class="text-xs font-medium uppercase tracking-widest text-on-surface/60 font-label">© 2026 Chronos. Crafted for rhythm.</div>
+      <div class="flex items-center gap-6">
+        <a class="text-xs font-medium uppercase tracking-widest text-[#191c1d]/50 hover:text-green-500 opacity-80 hover:opacity-100 transition-opacity font-label" href="#">Privacy</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-[#191c1d]/50 hover:text-green-500 opacity-80 hover:opacity-100 transition-opacity font-label" href="#">Terms</a>
+        <a class="text-xs font-medium uppercase tracking-widest text-[#191c1d]/50 hover:text-green-500 opacity-80 hover:opacity-100 transition-opacity font-label" href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

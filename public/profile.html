@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="profile">
+  <main class="profile-shell">
+    <section class="profile-card reveal">
+      <div class="profile-head">
+        <a class="btn btn-ghost" href="dashboard.html">Back</a>
+        <h1>Your Profile</h1>
+      </div>
+
+      <div class="profile-avatar-wrap">
+        <img id="profileAvatarPreview" class="profile-avatar" alt="Profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6PBY9AW1y6eTbrlu_EPxaG8pMRI9ZZwslitjvTbkgmb0h8mW1xBhS01ZG_RXdBE5gbXotrz9C5KAygJaGk_RywIFm0ogu8bhYD-v3o4Hp1tHeVV1bzrPBTPunwjAeZsxAlaV9BwYjTIa2TTtTVWCJatIIKULDfoQcgghFNarR22egTYiBOQDB785DWPccn5YTYtC3DmhSaDB8xra3N2xbkagxiE5bb8OpWBMIwvPUIBHOsGIXaNkMZHGF3b0bTW6-Lu4LppuLIgGA">
+        <label class="btn btn-ghost" for="profileImageInput">Upload Photo</label>
+        <input id="profileImageInput" type="file" accept="image/*">
+      </div>
+
+      <form id="profileForm" class="auth-form" novalidate>
+        <label for="profileFullName">Full Name</label>
+        <input id="profileFullName" name="full_name" type="text" placeholder="Your full name" required>
+
+        <label for="profileEmail">Email</label>
+        <input id="profileEmail" type="email" disabled>
+
+        <button class="btn btn-primary btn-full" type="submit">Save Profile</button>
+      </form>
+
+      <p id="profileMessage" class="form-message" aria-live="polite"></p>
+
+      <section class="best-streak-card">
+        <p class="mini-label">Highest Streak Habit</p>
+        <h3 id="profileBestHabit">No habit yet</h3>
+        <p id="profileBestStreak" class="dash-sub">0 streak</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

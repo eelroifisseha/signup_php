@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="signup">
+  <main class="auth-shell">
+    <section class="auth-card reveal">
+      <a href="index.html" class="back-link">Back to home</a>
+      <h1>Create account</h1>
+      <p class="sub">Start your habit journey in under a minute.</p>
+
+      <form id="signupForm" class="auth-form" novalidate>
+        <label for="signupFullName">Full Name</label>
+        <input id="signupFullName" name="full_name" type="text" placeholder="John Doe" required>
+
+        <label for="signupEmail">Email</label>
+        <input id="signupEmail" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="signupPassword">Password</label>
+        <div class="password-wrap">
+          <input id="signupPassword" name="password" type="password" placeholder="Create password" autocomplete="new-password" required>
+          <button class="password-toggle" type="button" data-toggle-password="signupPassword" aria-label="Show password" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path class="icon-eye" d="M12 5c6.5 0 10.5 7 10.5 7s-4 7-10.5 7S1.5 12 1.5 12 5.5 5 12 5Zm0 2C8.1 7 5.1 10.2 3.9 12 5.1 13.8 8.1 17 12 17s6.9-3.2 8.1-5C18.9 10.2 15.9 7 12 7Zm0 2.2a2.8 2.8 0 1 1 0 5.6 2.8 2.8 0 0 1 0-5.6Z"/>
+              <path class="icon-eye-off" d="M3.3 2.2 22 20.9l-1.4 1.4-3-3C16 20 14.1 20.5 12 20.5c-6.5 0-10.5-7-10.5-7a22.2 22.2 0 0 1 6.3-6.3L1.9 3.6l1.4-1.4Zm7.8 7.8a2.8 2.8 0 0 0 3.9 3.9l-3.9-3.9Zm.9-5c6.5 0 10.5 7 10.5 7a22 22 0 0 1-3.4 4l-1.4-1.4A18.2 18.2 0 0 0 20.1 12C18.9 10.2 15.9 7 12 7c-.9 0-1.7.1-2.5.3L7.8 5.6c1.3-.4 2.7-.6 4.2-.6Z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="strength">
+          <div class="strength-bar" aria-hidden="true"><span id="strengthFill"></span></div>
+          <p class="strength-text" id="strengthText">Password strength: too weak</p>
+          <p class="strength-hint">Use 8+ chars with uppercase, lowercase, number, and special character.</p>
+        </div>
+
+        <label for="signupConfirmPassword">Re-enter Password</label>
+        <div class="password-wrap">
+          <input id="signupConfirmPassword" name="confirm_password" type="password" placeholder="Repeat password" autocomplete="new-password" required>
+          <button class="password-toggle" type="button" data-toggle-password="signupConfirmPassword" aria-label="Show password" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path class="icon-eye" d="M12 5c6.5 0 10.5 7 10.5 7s-4 7-10.5 7S1.5 12 1.5 12 5.5 5 12 5Zm0 2C8.1 7 5.1 10.2 3.9 12 5.1 13.8 8.1 17 12 17s6.9-3.2 8.1-5C18.9 10.2 15.9 7 12 7Zm0 2.2a2.8 2.8 0 1 1 0 5.6 2.8 2.8 0 0 1 0-5.6Z"/>
+              <path class="icon-eye-off" d="M3.3 2.2 22 20.9l-1.4 1.4-3-3C16 20 14.1 20.5 12 20.5c-6.5 0-10.5-7-10.5-7a22.2 22.2 0 0 1 6.3-6.3L1.9 3.6l1.4-1.4Zm7.8 7.8a2.8 2.8 0 0 0 3.9 3.9l-3.9-3.9Zm.9-5c6.5 0 10.5 7 10.5 7a22 22 0 0 1-3.4 4l-1.4-1.4A18.2 18.2 0 0 0 20.1 12C18.9 10.2 15.9 7 12 7c-.9 0-1.7.1-2.5.3L7.8 5.6c1.3-.4 2.7-.6 4.2-.6Z"/>
+            </svg>
+          </button>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+      </form>
+
+      <p id="signupMessage" class="form-message" aria-live="polite"></p>
+      <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

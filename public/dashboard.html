@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+  <div class="dashboard-app">
+    <aside class="chronos-sidebar">
+      <a href="profile.html" class="sidebar-profile-card">
+        <img id="sidebarAvatar" class="sidebar-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6PBY9AW1y6eTbrlu_EPxaG8pMRI9ZZwslitjvTbkgmb0h8mW1xBhS01ZG_RXdBE5gbXotrz9C5KAygJaGk_RywIFm0ogu8bhYD-v3o4Hp1tHeVV1bzrPBTPunwjAeZsxAlaV9BwYjTIa2TTtTVWCJatIIKULDfoQcgghFNarR22egTYiBOQDB785DWPccn5YTYtC3DmhSaDB8xra3N2xbkagxiE5bb8OpWBMIwvPUIBHOsGIXaNkMZHGF3b0bTW6-Lu4LppuLIgGA" alt="Profile avatar">
+        <div>
+          <h3 id="sidebarProfileName">User</h3>
+          <p id="sidebarProfileStreak">🔥 0</p>
+        </div>
+      </a>
+
+      <div class="sidebar-brand">
+        <span class="material-symbols-outlined filled-icon">eco</span>
+        <h2>Chronos</h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="tab-link active" data-tab-target="journal" type="button">
+          <span class="material-symbols-outlined">edit_calendar</span>
+          <span>Journal</span>
+        </button>
+        <button class="tab-link" data-tab-target="analytics" type="button">
+          <span class="material-symbols-outlined">insert_chart</span>
+          <span>Analytics</span>
+        </button>
+        <button class="tab-link" data-tab-target="streaks" type="button">
+          <span class="material-symbols-outlined">local_fire_department</span>
+          <span>Streaks</span>
+        </button>
+        <button class="tab-link" data-tab-target="settings" type="button">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Settings</span>
+        </button>
+      </nav>
+
+      <button id="logoutBtn" class="btn btn-ghost sidebar-logout">Logout</button>
+    </aside>
+
+    <main class="chronos-main">
+      <header class="chronos-hero">
+        <div>
+          <p class="mini-label">The Living Chronology</p>
+          <h1 class="dash-title">Habit Dashboard</h1>
+          <p id="welcomeText" class="dash-sub"></p>
+        </div>
+        <div class="hero-date-chip">
+          <span class="material-symbols-outlined">calendar_month</span>
+          <span id="todayDate"></span>
+        </div>
+      </header>
+
+      <section id="panel-journal" class="tab-panel active">
+        <section class="add-habit-card reveal">
+          <h2>Add New Habit</h2>
+          <form id="habitForm" class="habit-form" novalidate>
+            <input id="habitName" type="text" placeholder="e.g. Read 20 pages" maxlength="60" required>
+            <button id="openScheduleBtn" class="btn btn-ghost schedule-trigger" type="button">
+              <span id="schedulePreview">Every day starting today</span>
+            </button>
+            <button type="submit" class="btn btn-primary">Add Habit</button>
+          </form>
+          <p id="habitMessage" class="form-message" aria-live="polite"></p>
+        </section>
+
+        <section class="habit-section">
+          <div class="list-head">
+            <h2>Your Habits</h2>
+            <p class="list-sub">Mark today’s progress and protect your rhythm.</p>
+          </div>
+          <div id="habitList" class="habit-grid"></div>
+          <p id="emptyState" class="empty-state">No habits yet. Add your first one to get started.</p>
+        </section>
+      </section>
+
+      <section id="panel-analytics" class="tab-panel">
+        <section class="habit-section">
+          <div class="list-head">
+            <h2>Analytics</h2>
+            <p class="list-sub">A quick view of your consistency.</p>
+          </div>
+          <div class="analytics-grid">
+            <article class="metric-card">
+              <p>Total Habits</p>
+              <h3 id="metricTotalHabits">0</h3>
+            </article>
+            <article class="metric-card">
+              <p>Due Today</p>
+              <h3 id="metricDueToday">0</h3>
+            </article>
+            <article class="metric-card">
+              <p>Done Today</p>
+              <h3 id="metricDoneToday">0</h3>
+            </article>
+            <article class="metric-card">
+              <p>Completion Today</p>
+              <h3 id="metricCompletionRate">0%</h3>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="panel-streaks" class="tab-panel">
+        <section class="habit-section">
+          <div class="list-head">
+            <h2>Streaks</h2>
+            <p class="list-sub">Habits ranked by current streak.</p>
+          </div>
+          <div id="streaksList" class="streaks-list"></div>
+          <p id="streaksEmpty" class="empty-state">No streak data yet. Start completing your habits.</p>
+        </section>
+      </section>
+
+      <section id="panel-settings" class="tab-panel">
+        <section class="habit-section">
+          <div class="list-head">
+            <h2>Settings</h2>
+            <p class="list-sub">Manage account details and profile.</p>
+          </div>
+          <div class="settings-actions">
+            <a class="btn btn-primary" href="profile.html">Go To Profile Page</a>
+            <button id="logoutBtnSettings" class="btn btn-ghost" type="button">Logout</button>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div id="scheduleModal" class="schedule-modal hidden" aria-hidden="true">
+    <div class="schedule-sheet">
+      <div class="sheet-handle"></div>
+      <h3>Custom repeat</h3>
+
+      <div class="schedule-quick-list">
+        <button class="quick-option" type="button" data-quick="today">
+          <span>Today</span>
+          <small id="quickTodayLabel"></small>
+        </button>
+        <button class="quick-option" type="button" data-quick="tomorrow">
+          <span>Tomorrow</span>
+          <small id="quickTomorrowLabel"></small>
+        </button>
+        <button class="quick-option" type="button" data-quick="next_week">
+          <span>Next week</span>
+          <small id="quickNextWeekLabel"></small>
+        </button>
+        <button class="quick-option" type="button" data-quick="next_weekend">
+          <span>Next weekend</span>
+          <small id="quickWeekendLabel"></small>
+        </button>
+      </div>
+
+      <div class="schedule-block">
+        <label>Every</label>
+        <div class="interval-row">
+          <button id="intervalMinus" class="interval-btn" type="button" aria-label="Decrease interval">−</button>
+          <input id="intervalValue" type="number" min="1" max="365" value="1">
+          <button id="intervalPlus" class="interval-btn" type="button" aria-label="Increase interval">+</button>
+          <select id="intervalUnit">
+            <option value="day">Day</option>
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+            <option value="year">Year</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="schedule-actions">
+        <button id="cancelScheduleBtn" type="button" class="btn btn-ghost">Cancel</button>
+        <button id="saveScheduleBtn" type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="editHabitModal" class="schedule-modal hidden" aria-hidden="true">
+    <div class="schedule-sheet">
+      <div class="sheet-handle"></div>
+      <h3>Edit habit</h3>
+
+      <div class="schedule-block">
+        <label for="editHabitNameInput">Habit name</label>
+        <input id="editHabitNameInput" type="text" maxlength="60">
+      </div>
+
+      <div class="schedule-block">
+        <label>Repeat</label>
+        <div class="interval-row">
+          <button id="editIntervalMinus" class="interval-btn" type="button" aria-label="Decrease interval">−</button>
+          <input id="editIntervalValue" type="number" min="1" max="365" value="1">
+          <button id="editIntervalPlus" class="interval-btn" type="button" aria-label="Increase interval">+</button>
+          <select id="editIntervalUnit">
+            <option value="day">Day</option>
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+            <option value="year">Year</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="schedule-actions">
+        <button id="cancelEditHabitBtn" type="button" class="btn btn-ghost">Cancel</button>
+        <button id="saveEditHabitBtn" type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
